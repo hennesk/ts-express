@@ -1,0 +1,61 @@
+{
+  "name": "ts-express",
+  "version": "1.0.0",
+  "description": "A basic REST server in TypeScript with standard tooling and setup",
+  "main": "src/main.ts",
+  "scripts": {
+    "build": "tsc",
+    "docker:build": "docker build -t ts-express .",
+    "docker:start": "docker run -d --name ts-express -p 3000:3000 ts-express",
+    "docker:stop": "docker stop ts-express",
+    "lint": "prettier -w src/** && eslint --ext .ts src/**",
+    "prepare": "husky install",
+    "start": "node lib/main.js",
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hennesk/ts-express.git"
+  },
+  "keywords": [
+    "typescript",
+    "REST",
+    "express"
+  ],
+  "author": "Kevin Hennessy",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/hennesk/ts-express/issues"
+  },
+  "homepage": "https://github.com/hennesk/ts-express#readme",
+  "devDependencies": {
+    "@types/bunyan": "^1.8.8",
+    "@types/express": "^4.17.17",
+    "@types/jest": "^29.5.1",
+    "@types/node": "^18.16.16",
+    "@types/supertest": "^2.0.12",
+    "@typescript-eslint/eslint-plugin": "^5.59.8",
+    "@typescript-eslint/parser": "^5.59.8",
+    "eslint": "^8.41.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.2",
+    "prettier": "^2.8.8",
+    "supertest": "^6.3.3",
+    "ts-jest": "^29.1.0",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "bunyan": "^1.8.15",
+    "express": "^4.18.2"
+  },
+  "lint-staged": {
+    "src/**/*.ts": [
+      "prettier -w",
+      "eslint --fix --ext .ts src/**"
+    ]
+  },
+  "prettier": {
+    "printWidth": 120,
+    "singleQuote": true
+  }
+}
