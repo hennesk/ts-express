@@ -8,7 +8,6 @@ updates:
       - "hennesk"
     ignore:
       - dependency-name: "*"
-        dependency-type: development
         update-types: ["version-update:semver-major"]
         
   - package-ecosystem: "docker"
