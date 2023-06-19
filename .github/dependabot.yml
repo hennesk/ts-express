@@ -9,6 +9,7 @@ updates:
     ignore:
       - dependency-type: development
         update-types: ["version-update:semver-major"]
+        dependency-name: "*"
   - package-ecosystem: "docker"
     directory: "/"
     schedule:
@@ -17,3 +18,4 @@ updates:
       - "hennesk"
     ignore:
       - update-types: ["version-update:semver-major"]
+        dependency-name: "*"
