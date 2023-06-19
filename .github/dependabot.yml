@@ -7,9 +7,10 @@ updates:
     reviewers:
       - "hennesk"
     ignore:
-      - dependency-type: development
+      - dependency-name: "*"
+        dependency-type: development
         update-types: ["version-update:semver-major"]
-        dependency-name: "*"
+        
   - package-ecosystem: "docker"
     directory: "/"
     schedule:
@@ -17,5 +18,6 @@ updates:
     reviewers:
       - "hennesk"
     ignore:
-      - update-types: ["version-update:semver-major"]
-        dependency-name: "*"
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
+        
